@@ -30,7 +30,7 @@ fmt.Println("2d:", arr)
 // 2d: [[0 1 2] [1 2 3]]
 ```
 
-``
+```
 Срезы
 
 Срез (slice) — ключевая структура данных в Go. Это массив изменяемой длины, как list в питоне или Array в js. Обычно в программах на Go оперируют именно срезами, «чистые» массивы встречаются намного реже.
@@ -97,4 +97,28 @@ fmt.Println("sl2:", sl2)
 sl3 := s[2:]
 fmt.Println("sl3:", sl3)
 // sl3: [c d e f]
+```
+
+```
+Карта (map), так же известная как словарь (dict), хеш-таблица (hash table) или ассоциативный массив (associative array) — это неупорядоченный набор пар «ключ-значение».
+
+m := make(map[string]int)
+
+m["key"] = 7
+m["other"] = 13
+
+fmt.Println("map:", m)
+
+val := m["key"]
+fmt.Println("val:", val)
+
+fmt.Println("len:", len(m))
+
+delete(m, "other")
+
+_, ok := m["other"]
+fmt.Println("has other:", ok)
+
+n := map[string]int{"foo": 1, "bar": 2}
+fmt.Println("map:", n)
 ```

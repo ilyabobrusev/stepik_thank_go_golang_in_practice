@@ -8,6 +8,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
+
+	"github.com/sahilm/fuzzy"
 )
 
 func main() {
@@ -15,10 +17,8 @@ func main() {
 	if err != nil {
 		fail(err)
 	}
-	isMatch, err := match(pattern, src)
-	if err != nil {
-		fail(err)
-	}
+	matches := fuzzy.Find(pattern, []string{src})
+	isMatch := len(matches) > 0
 	if !isMatch {
 		os.Exit(0)
 	}
